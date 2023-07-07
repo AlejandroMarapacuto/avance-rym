@@ -3,8 +3,8 @@ import image1 from "../../assets/imgs/welcome3.jpg";
 
 export const DivForm = styled.div`
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 55%;
+  left: 45%;
   transform: translate(-50%, -50%);
   background-color: RGBA(61, 199, 161, 0.1);
   background-position: center;

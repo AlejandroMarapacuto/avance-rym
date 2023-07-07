@@ -9,6 +9,8 @@ export const DivContainer = styled.div`
   background-position: center;
   height: 550px;
   width: 900px;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
