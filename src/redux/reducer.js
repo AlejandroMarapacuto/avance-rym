@@ -1,5 +1,4 @@
-import { ADD_FAV, REMOVE_FAV } from "./actions";
-import { FILTER, ORDER } from "./actions";
+import { ADD_FAV, REMOVE_FAV, FILTER, ORDER, ALL_FAVORITES } from "./actions";
 
 const initialState = {
   myFavorites: [],
@@ -54,6 +53,9 @@ const reducer = (state = initialState, action) => {
           return 0;
         }),
       };
+
+    case ALL_FAVORITES:
+      return { ...state, myFavorites: state.allCharacters };
 
     default:
       return { ...state };

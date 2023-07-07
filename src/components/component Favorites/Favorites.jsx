@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Card from "../component Card/Card";
 import { DivContainer, DivContainer2, Selects } from "./styledComponents";
 import { useDispatch } from "react-redux";
-import { filterCards, orderCards } from "../../redux/actions";
+import { filterCards, orderCards, allFavorites } from "../../redux/actions";
 import { useState } from "react";
 
 const Favorites = () => {
@@ -16,7 +16,11 @@ const Favorites = () => {
   };
 
   const handleFilter = (event) => {
-    dispatch(filterCards(event.target.value));
+    if (event.target.value === "allFavorites") {
+      dispatch(allFavorites());
+    } else {
+      dispatch(filterCards(event.target.value));
+    }
   };
   return (
     <DivContainer>
@@ -26,11 +30,11 @@ const Favorites = () => {
           <option value="D">Descendent</option>
         </Selects>
         <Selects onChange={handleFilter}>
+          <option value="allFavorites">All Favorites</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
           <option value="Genderless">Genderless</option>
           <option value="unknown">Unknown</option>
-          <option>All Characters</option>
         </Selects>
       </DivContainer2>
       {myFavorites.map((char) => {

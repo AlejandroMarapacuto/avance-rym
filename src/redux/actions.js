@@ -2,6 +2,7 @@ export const ADD_FAV = "ADD_FAV";
 export const REMOVE_FAV = "REMOVE_FAV";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
+export const ALL_FAVORITES = "ALL_FAVORITES";
 
 export const addFav = (
   key,
@@ -48,5 +49,11 @@ export const orderCards = (order) => {
   return {
     type: ORDER,
     payload: order,
+  };
+};
+
+export const allFavorites = () => {
+  return {
+    type: ALL_FAVORITES,
   };
 };
