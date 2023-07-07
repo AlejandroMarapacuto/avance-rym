@@ -7,24 +7,24 @@ export const validation = (userData) => {
   };
 
   if (!userData.email) {
-    errors.email = "Se requiere un email";
+    errors.email = "Enter your email";
   }
 
   if (!regexEmail.test(userData.email)) {
     errors.email = "Must be an email";
   }
 
-  // if (userData.email.length > 35) {
-  //   errors.email = "No puede tener mas de 35 caracteres!";
-  // }
-
-  if (!userData.password) {
-    errors.password = "Must have at least 1 number";
+  if (userData.email.length > 35) {
+    errors.email = "Cannot exceed 35 characters!!";
   }
 
-  // if (userData.password.length < 6 && userData.password.length > 10) {
-  //   errors.password = "Debe tener una longitud entre 6 y 10 caracteres";
-  // }
+  if (!userData.password) {
+    errors.password = "Enter your password!";
+  }
+
+  if (userData.password.length < 6 || userData.password.length > 10) {
+    errors.password = "Password must be between 6 and 10 characters long!";
+  }
 
   return errors;
 };
