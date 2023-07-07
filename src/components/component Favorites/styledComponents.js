@@ -17,13 +17,13 @@ export const DivContainer = styled.div`
 
 export const DivContainer2 = styled.div`
   position: absolute;
-  top: -10%;
-  left: 47%;
+  top: 18%;
+  left: 120%;
   transform: translate(-50%, -50%);
   /* background-color: yellow; */
   background-position: center;
   height: 60px;
-  width: 500px;
+  width: 300px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
